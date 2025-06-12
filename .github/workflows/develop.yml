@@ -15,5 +15,6 @@ jobs:
           host: sv14309.xserver.jp
           username: xs475299
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ""
           port: 10022
           debug: true
