@@ -17,6 +17,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd atsushi-web.site/public_html/test_ssh
+            cd /home/xs475299/atsushi-web.site/public_html/test_ssh
             git checkout develop
             git pull origin develop
