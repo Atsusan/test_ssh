@@ -14,7 +14,7 @@ jobs:
         with:
           host: sv14309.xserver.jp
           username: xs475299
-          key: -----BEGIN OPENSSH PRIVATE KEY-----b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUxOQAAACDDISqcbzNE/yGInEjRgssurBM+G7REFjkBUa8NU5ZZxQAAAJie+obmnvqG5gAAAAtzc2gtZWQyNTUxOQAAACDDISqcbzNE/yGInEjRgssurBM+G7REFjkBUa8NU5ZZxQAAAECGxvMuA+Jc/02UcYiAuI3NdXdglY+uyfbyjdOwozIVc8MhKpxvM0T/IYicSNGCyy6sEz4btEQWOQFRrw1TllnFAAAADmdpdGh1Yi1hY3Rpb25zAQIDBAUGBw==-----END OPENSSH PRIVATE KEY-----
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ""
           port: 10022
           debug: true
