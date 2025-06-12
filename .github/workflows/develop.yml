@@ -2,7 +2,7 @@ name: Release to Develop Environment
 on:
   push:
     branches:
-      - main
+      - develop
       
 jobs:
   job1:
@@ -15,9 +15,9 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: ${{ secrets.SSH_PORT }}
-          debug: true
           script: |
             cd /home/xs475299/atsushi-web.site/public_html/test_ssh
-            git checkout main
-            git pull origin main
+            git checkout develop
+            git pull origin develop
