@@ -18,6 +18,6 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/server_id/mydomein.jp/sample/
+            cd atsushi-web.site/public_html/test_ssh
             git checkout develop
             git pull origin develop
