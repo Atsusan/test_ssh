@@ -13,7 +13,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: sv14309.xserver.jp
-          username: ${{ secrets.SSH_USERNAME }}
+          username: xs475299
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          port: 10022
           debug: true
