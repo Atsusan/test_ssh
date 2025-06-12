@@ -1,20 +1,24 @@
 name: Release to Develop Environment
+
 on:
   push:
     branches:
       - main
-      
+
 jobs:
-  job1:
-    name: Deploy
+  deploy:
+    name: Deploy to Xserver
     runs-on: ubuntu-latest
     steps:
-      - name: ssh and deploy
-        uses: appleboy/ssh-action@master
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: sv14309.xserver.jp
           username: xs475299
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          passphrase: ""
           port: 10022
+          passphrase: ""
+          script: |
+            echo "✅ SSH接続に成功しました"
+            # cd /home/xs475299/public_html などのデプロイコマンドを書く
           debug: true
