@@ -14,14 +14,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: -----BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-QyNTUxOQAAACDDISqcbzNE/yGInEjRgssurBM+G7REFjkBUa8NU5ZZxQAAAJie+obmnvqG
-5gAAAAtzc2gtZWQyNTUxOQAAACDDISqcbzNE/yGInEjRgssurBM+G7REFjkBUa8NU5ZZxQ
-AAAECGxvMuA+Jc/02UcYiAuI3NdXdglY+uyfbyjdOwozIVc8MhKpxvM0T/IYicSNGCyy6s
-Ez4btEQWOQFRrw1TllnFAAAADmdpdGh1Yi1hY3Rpb25zAQIDBAUGBw==
------END OPENSSH PRIVATE KEY-----
-
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           debug: true
           script: |
