@@ -1,24 +1,23 @@
 name: Release to Develop Environment
-
 on:
   push:
     branches:
-      - main
-
+      - develop
+      
 jobs:
-  deploy:
-    name: Deploy to Xserver
+  job1:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v0.1.7
+      - name: ssh and deploy
+        uses: appleboy/ssh-action@master
         with:
-          host: sv14309.xserver.jp
-          username: xs475299
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 10022
-          passphrase: ""
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
-            echo "✅ SSH接続に成功しました"
-            # cd /home/xs475299/public_html などのデプロイコマンドを書く
-          debug: true
+            cd /home/xs475299/atsushi-web.site/public_html/test_ssh
+            git checkout develop
+            git pull origin develop
